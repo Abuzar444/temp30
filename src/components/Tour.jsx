@@ -34,12 +34,11 @@ export default function Tour({ id, image, info, name, price, handleDelete }) {
             </>
           ) : (
             <>
-              {info.substring(0, 140)}{" "}
+              {info.substring(0, 140)}
               <span
                 className="text-emerald-600 cursor-pointer"
                 onClick={() => setIsOpen(true)}
               >
-                {" "}
                 &nbsp; Show More
               </span>
             </>
