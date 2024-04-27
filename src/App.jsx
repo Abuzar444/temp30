@@ -21,8 +21,6 @@ export default function App() {
     try {
       setIsLoading(true);
       const response = await axios(url);
-
-      console.log(response.data);
       setTours(response.data);
       setIsLoading(false);
     } catch (error) {
@@ -42,19 +40,20 @@ export default function App() {
     return <Error msg={error} />;
   }
 
+  if (tours.length === 0) {
+    return <div>Error...</div>
+  }
+
   return (
     <section className="bg-emerald-100 min-h-screen w-screen py-[64px]">
       <div className="container mx-auto ">
         <h1 className="text-[40px] text-[#0F172A] text-center">
           <span className="inline-block heading-text relative">Our Tours</span>
         </h1>
-
-        {tours.length > 0 && (
-          <TourList
-            tours={tours}
-            handleDelete={handleDelete}
-          />
-        )}
+        <TourList
+          tours={tours}
+          handleDelete={handleDelete}
+        />
       </div>
     </section>
   );
