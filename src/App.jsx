@@ -41,7 +41,7 @@ export default function App() {
   }
 
   if (tours.length === 0) {
-    return <div>Error...</div>
+    return <div>{error.response.message}</div>
   }
 
   return (
