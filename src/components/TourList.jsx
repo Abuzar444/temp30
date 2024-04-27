@@ -9,9 +9,11 @@ export default function TourList({ tours, handleDelete }) {
   //   />
   // ));
 
-  return <div className="mt-12 tours-list">
-    {tours.map((tour) => {
-      return <Tour {...tour} key={tour.id} handleDelete={handleDelete} />
-    })}
-  </div>;
+  return (
+    <div className="mt-12 tours-list">
+      {tours.map((tour) => {
+        return <Tour {...tour} key={tour.id} handleDelete={handleDelete} />
+      })}
+    </div>
+  );
 }
